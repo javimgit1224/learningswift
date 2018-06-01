@@ -65,7 +65,20 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+//RESTART BUTTON
+    @IBAction func restartGame(_ sender: Any) {
+        //reset the count scores to 0
+        left_score = 0
+        right_score = 0
+        //change the score label to 0
+        leftPlayerScore.text = String(left_score)
+        rightPlayerScore.text = String(right_score)
+        //reset the card images
+        leftImageView.image = UIImage(named: "back")
+        rightImageView.image = UIImage(named: "back")
+        
+    }
+    
 
 }
 
