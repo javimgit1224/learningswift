@@ -17,6 +17,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var leftPlayerScore: UILabel!
     
     @IBOutlet weak var rightPlayerScore: UILabel!
+    //create 2 var to count scores
+    var left_score:Int = 0
+    var right_score:Int = 0
+    
     //touch up inside is when the user just taps the button
     @IBAction func dealTapped(_ sender: Any) {
         print("deal")
@@ -34,6 +38,21 @@ class ViewController: UIViewController {
         
         //create a new UIImage object for right card
         rightImageView.image = UIImage(named: "card\(RightRandomNum)")
+        
+        //compare the numbers to see which player won the round
+        if LeftRandomNum > RightRandomNum {
+            //increment the left score
+            left_score = left_score + 1
+            //update the label
+            leftPlayerScore.text = String(left_score)
+        }
+        else if RightRandomNum > LeftRandomNum {
+            right_score = right_score + 1
+            rightPlayerScore.text = String(right_score)
+        }
+        else if LeftRandomNum == RightRandomNum {
+            //do nothing
+        }
     }
     
     
