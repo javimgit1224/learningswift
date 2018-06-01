@@ -20,6 +20,20 @@ class ViewController: UIViewController {
     //touch up inside is when the user just taps the button
     @IBAction func dealTapped(_ sender: Any) {
         print("deal")
+        //your letting the random number equal a random number
+        //the parameter is 13 numbers 0-12
+        //since card starts at 2 and ends at 14 we add 2
+        let LeftRandomNum = arc4random_uniform(13) + 2
+        print("Left \(LeftRandomNum)")
+        let RightRandomNum = arc4random_uniform(13) + 2
+        print("Right \(RightRandomNum)")
+
+        //create a new UIImage object for left card
+        
+        leftImageView.image = UIImage(named: "card\(LeftRandomNum)")
+        
+        //create a new UIImage object for right card
+        rightImageView.image = UIImage(named: "card\(RightRandomNum)")
     }
     
     
